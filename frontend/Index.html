@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Entrée événement</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>Formulaire d'entrée</h1>
+  <form id="participantForm">
+    <label>Année de naissance: <input type="number" name="birth_year" required></label><br>
+    <label>Genre: 
+      <select name="gender">
+        <option value="">Préféré ne pas dire</option>
+        <option value="male">Homme</option>
+        <option value="female">Femme</option>
+        <option value="other">Autre</option>
+      </select>
+    </label><br>
+    <label>
+      <input type="checkbox" name="consent" required> J'accepte la collecte de mes données
+    </label><br>
+    <button type="submit">Valider</button>
+  </form>
+
+  <script src="main.js"></script>
+</body>
+</html>

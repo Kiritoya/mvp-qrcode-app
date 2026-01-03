@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>Statistiques événement</h1>
+  <label>Event ID: <input type="number" id="eventId" value="1"></label>
+  <button id="loadStats">Charger stats</button>
+
+  <p id="stats"></p>
+
+  <script>
+    document.getElementById('loadStats').addEventListener('click', async () => {
+      const id = document.getElementById('eventId').value;
+      const res = await fetch(`http://localhost:3000/events/${id}/stats`);
+      const data = await res.json();
+      document.getElementById('stats').innerText = `Total participants: ${data.total}, Âge moyen: ${data.avgAge.toFixed(1)}`;
+    });
+  </script>
+</body>
+</html>
